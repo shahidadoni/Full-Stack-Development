@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancestor Tree</title>
+    <Style>
+        
+        .ggf{
+            margin-left: 80px;
+            margin-top :80px;
+            margin-bottom: 200px;
+            width: 500px;
+            <!--background-color: red;-->
+            
+        }
+        .gf{
+            margin-left: 20px;
+            padding-top: 20px;
+            border-left:2px solid rgb(0, 0, 0);
+            <!--background-color: green;-->
+        }
+        .father,.uncle,.aunty{
+            margin-left: 20px;
+            padding-top: 20px;
+            border-left:2px solid rgb(0, 0, 0);
+            <!--background-color: blue;-->
+            margin-bottom: 10px;
+        }
+        .ggf div div div{
+            padding-top: 20px;
+            border-left:2px solid rgb(0, 0, 0);
+            margin-left: 30px;
+        }
+        .father>div~div{
+            color: green;
+        }
+        .ggf div{
+            color: maroon;
+        }
+        .ggf>.gf{
+            color: orangered;
+        }
+        .ggf::before {
+            content: "Great Grand Father";
+            color: black;
+        }
+        .gf::before {
+            content: "---Grand Father";
+            color: black;
+        }
+        .father::before{
+            content: "---Father";
+            color: black; 
+        }
+        .uncle::before{
+            content: "---Uncle";
+            color: black;
+        }
+        .aunty::before{
+            content: "---Aunty";
+            color: black;
+        }
+        .ggf div div div{
+            margin-left: 50px;
+        }
+        .ggf div div div::before{
+            content:"---";
+        }
+        .ggf:hover::before,.ggf div:hover::before{
+            background-color: yellowgreen;
+        }
+        .gf,.gf div,.gf div div{
+            visibility: hidden;
+        }
+        .ggf:hover .gf,.gf:hover .father,.gf:hover .uncle,.gf:hover .aunty{
+            visibility: visible;
+        }
+        .father:hover div,.uncle:hover div,.aunty:hover div{
+            visibility: visible;
+        }
+    
+    </Style>
+</head>
+<body>
+    <div class="ggf">
+        <div class="gf">
+            <div class="father">
+                <div>Me</div>
+                <div>Brother</div>
+                <div>Sister</div>
+            </div>
+            <div class="uncle">
+                <div>Cousin 1</div>
+                <div>Cousin 2</div>
+                <div>Cousin 3</div>
+            </div>
+        </div>
+        <div class="gf">
+            <div class="uncle">
+                <div>Cousin 4</div>
+                <div>Cousin 5</div>
+                <div>Cousin 6</div>
+            </div>
+            <div class="aunty">
+                <div>Cousin 7</div>
+                <div>Cousin 8</div>
+                <div>Cousin 9</div>
+            </div>
+            <div class="uncle">
+                <div>Cousin 10</div>
+                <div>Cousin 11</div>
+                <div>Cousin 12</div>
+            </div>
+        </div>
+        <div class="gf">
+            <div class="uncle">
+                <div>Cousin 13</div>
+                <div>Cousin 14</div>
+                <div>Cousin 15</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    margin: auto;
+    background-image: url(images1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+     background-size: cover;
+}
+.calc{
+    min-height: 90vh;
+    min-width: 30vw;
+    aspect-ratio: 9/16;
+}
+.display-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.display{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 15%;
+    width: 80%;
+    background-color: rgb(142, 167, 136,0.6);
+    font-size: 60px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-right: 20px;
+    overflow: hidden;
+   
+}   
+
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding-top: 10px;
+    grid-gap: 10px;
+    height: 55%;
+    width: 80%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+#equalsto{
+    grid-column: span 4 ;
+    border: 3px solid rgb(43, 177, 43);
+    font-size: 40px;
+}
+.numbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    min-width: 100%;
+    border: 3px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.sign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    min-width: 100%;
+    border: 3px solid orange;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.cancel{
+    border: 3px solid red;
+    background-color: rgb(255, 0, 0,.6);
+}

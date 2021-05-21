@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     </title>
 </head>
 
-<body>
+<body /*onload="document.getElementById('login-modal').style.display='block'"*/>
     <div id="wrapper">
         <header id="nav-bar">
             <div class="nav-space"></div>
@@ -36,7 +36,7 @@
                         <i class="fas fa-search" aria-hidden="true"></i>
                     </button>
                 </div>
-                <button class="login-btn">Login</button>
+                <button onclick="document.getElementById('login-modal').style.display='block'" class="login-btn">Login</button>
                 <div class="dropdown">
                     <p class="drop-me">More<p>
                     <div class="arrow-li">
@@ -153,9 +153,56 @@
             </div>
         </div>
     </div>
-    <div style="min-height: 1000px;">
-        
+    <div id="login-modal">
+        <div class="Login-popup" >
+            <div class="login-box">
+                <div class="login-left-box">
+                    <div>
+                        <span style="font-size: 30px; font-weight: 500; color: #fff;">Login</span>
+                        <p class="left-box-para">
+                        <span style="font-size: 20px;color: rgb(223, 223, 223);">Get access to your Orders, Wishlist and Recommendations</span>
+                        </p>
+                    </div>
+                     
+                </div>
+                <div class="login-right-box">
+                    <form class="login-form">
+                        <div class="login-email">
+                            <span>
+                                Enter Email/Mobile number
+                            </span>
+                            <br><input type="email"></br>
+                        </div>
+                        <div class="login-password" >
+                            <span>
+                                Enter Password
+                            </span>
+                            <br><input type="password"></br>
+                        </div>
+                        <div class="login-para1">
+                            By Continuing you agree to Flipkart's <a href="#">Terms Of Use</a> and <a href="#">Privacy Policy</a> 
+                        </div>
+                        <div class="login-form-btn">
+                            <button>Login</button>
+                        </div>
+                        <div class="login-or">
+                            OR
+                        </div>
+                        <div class="otp-btn">
+                            <button>Request OTP</button>
+                        </div>
+                        <div class="login-para2">
+                            <a href="#">New to Flipkart? Create an account</a>
+                        </div>
+                        <button id="close-login" onclick="document.getElementById('login-modal').style.display='none'">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>            
+        </div>
     </div>
+    
 </body>
 
 </html>

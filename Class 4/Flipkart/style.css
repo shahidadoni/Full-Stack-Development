@@ -68,6 +68,7 @@ a.flipkart-plus span {
     height: 30px;
     padding-left: 10px;
     font-size: medium;
+    outline: none;
     
 }
 .search button{
@@ -311,4 +312,142 @@ a.flipkart-plus span {
     text-overflow: ellipsis;
     color: #388e3c;
     padding-top: 8px;
+}
+#login-modal{
+    display: none;
+}
+.Login-popup{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+.login-box{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 550px;
+    max-height: 90vh;
+    max-width: 750px;
+    min-width: 650px;
+}
+.login-left-box{
+    background-image: url(login_img_c4a81e.png);
+    background-repeat: no-repeat;
+    background-position: center 80%;
+    width: 45%;
+    height: 100%;
+    background-color: #2874f0;
+}
+.login-left-box div{
+    padding: 40px;
+}
+.left-box-para{
+    padding-top: 20px;
+    line-height: 1.2;
+}
+.login-right-box{
+    width: 60%;
+    height: 100%;
+    background-color: #fff;
+    
+}
+.login-form{
+    padding: 70px 30px 10px 30px;
+}
+.login-email,.login-password{
+    padding-bottom: 20px;
+}
+.login-email span,.login-password span{
+    font-size: 18px;
+    font-weight: lighter;
+    color: #878787;
+}
+.login-email input,.login-password input{
+    height: 30px;
+    margin: 10px 0px;
+    width:90%;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    outline: none;
+}
+.login-para1{
+    font-size: 13px;
+    font-weight: lighter;
+    color: #878787;
+    padding: 5px 10px 10px 0px;
+}
+.login-para1 a{
+    text-decoration: none;
+    color: #2874f0;
+    font-weight: lighter;
+}
+.login-form-btn{
+    text-align: center;
+    padding: 5px 18px 10px 0px;
+}
+.login-form-btn button{
+    height: 45px;
+    width:100%;
+    border: 1px solid #fff;
+    background-color: #fb641b;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+.login-or{
+    font-size: 15px;
+    font-weight: lighter;
+    color: #878787;
+    text-align: center;
+    padding: 8px 20px 8px 0px;
+}
+.otp-btn{
+    text-align: center;
+    padding: 5px 18px 10px 0px;
+}
+.otp-btn button{
+    height: 45px;
+    width:100%;
+    border: 1px solid #fff;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px 2px rgb(0 0 0 / 30%);
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #2874f0;
+    cursor: pointer;
+}
+.login-para2{
+    text-align: center;
+    margin-top: 3em;
+}
+.login-para2 a{
+    text-decoration: none;
+    color: #2874f0;
+    font-size: 15px;
+    font-weight: bold;
+}
+#close-login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: xx-large;
+    background-color: rgba(0, 0, 0,0);
+    border: none;
+    color: rgb(0, 0, 0); 
+    cursor: pointer;
+    z-index: 10;
 }

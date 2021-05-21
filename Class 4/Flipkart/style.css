@@ -139,20 +139,23 @@ a.flipkart-plus span {
     text-decoration: none;
     color: #212121;
 }
-.dropdown-menu li{
+.dropdown-menu li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-left: 20px;
+    /* justify-content: center; */
+    /* padding-left: 20px; */
     padding-top: 10px;
     padding-bottom: 7px;
     border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
 }
-.dropdown-menu li i{
+.dropdown-menu li i {
     color: #2874f0;
     font-size: small;
     margin-right: 15px;
+    margin-left: 20px;
 }
 
 .fa-caret-up{
@@ -185,7 +188,7 @@ a.flipkart-plus span {
 .deals-of-the-day{
     display: flex;
     margin: 10px 25px;
-    height: 280px;
+    height: 380px;
     background-color: #ffffff;
 }
 .deals-of-the-day .left{
@@ -201,7 +204,7 @@ a.flipkart-plus span {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 20%;
     font-size: larger;
     font-weight: 800;
     padding-left: 20px;
@@ -236,8 +239,9 @@ a.flipkart-plus span {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
+    height: 80%;
 }
 .angle-left button{
     position: absolute;
@@ -264,24 +268,47 @@ a.flipkart-plus span {
     font-size: x-large;
     color: rgb(0, 0, 0);
 }
+.sliding-content::-webkit-scrollbar {
+    display: none;
+}
 .sliding-content{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    overflow:hidden;
-    width: 100%;
-    height: 90%;
+    justify-content: flex-start;
+    /*align-items: center;*/
+    height: 100%;
+    width:100%;
+    overflow: auto;
+    overflow-y: hidden;
 }
 .sliding-item{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     height: 100%;
     width: 25%;
-    margin: 5px;
-
+    margin: 5px 25px;
 }
-.para1,.para2{
+.item-img{
+    height: 150px;
+    width: 150px;
+}
+.item-para{
+    height: 10%;
     text-align: center;
+}
+.para1{
+    font-size: 16px;
+    font-weight: 800;
+    margin-top: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.para2{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #388e3c;
+    padding-top: 8px;
 }

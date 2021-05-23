@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+		}
+        #wrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+			background: #000;
+            background-image: url(images.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #clock{
+            color:rgb(0, 0, 0);
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper"><div id="clock"></div></div>
+    
+    <script>
+        function currentTime(){
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            //var ms = date.getMilliseconds();
+            var ampm = "AM";
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+            // if(ms<10){
+            //     ms="00"+ms;
+            // }else if(ms<100){
+            //     ms="0"+ms;
+            // }else if(ms==0){
+            //     ms="000";
+            // }
+
+            if(h >= 12){
+                h = h - 12;
+                ampm = "PM";
+            }
+            if(h == 0){
+                h = 12;
+            }
+
+            var time = h + ":" + m + ":" + s + " " + ampm;
+            //var time = h + ":" + m + ":" + s + ":" + ms + " " + ampm;
+            document.getElementById("clock").innerText = time;
+
+            setInterval(currentTime, 1);
+        }
+        currentTime();
+    </script>
+</body>
+</html>

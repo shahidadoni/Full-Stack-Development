@@ -1,0 +1,191 @@
+<html>
+
+<head>
+  <title>My Portfolio - Shahid</title>
+  <style>
+    body {
+      /*background: rgb(238, 179, 52);*/
+      padding: 0;
+      margin: 0;
+    }
+
+    .para1,
+    .para2 {
+      text-align: left;
+    }
+
+    .para1 {
+      width: 100%;
+    }
+
+    .para2 {
+      width: 100%;
+      font-size: 20px;
+    }
+
+    #header {
+      height: 40px;
+      background-color: black;
+    }
+
+    #wrapper {
+      display: flex;
+      width: 100%;
+    }
+
+    #left-section {
+      width: 40%;
+      height: 400px;
+      text-align: center;
+    }
+
+    #left-section img {
+      width: 100%;
+      height: 100%;
+      margin-top: 90px;
+    }
+
+    #right-section {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      height: 400px;
+    }
+    .para1 h1{
+      font-size: 4rem;
+      margin: 0;
+      margin-top: 80px;
+      color: #4ac3bf;
+    }
+    .para1 h2 {
+      font-size: 2rem; 
+      margin: 20px 0 0 0;
+    }
+    .para2{
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width:768px) {
+      #wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      #left-section img {
+      width: 100%;
+      height: 80%;
+      margin-top: 90px;
+      }
+      #left-section{
+        margin-bottom: 0;
+      }
+      #right-section{
+        margin-top: -50px;
+      }
+      .para1 h1{
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      .para1 h2{
+        font-size: 2rem;
+        text-align: center;
+      }
+      .para2{
+      font-size: 1rem;
+      }
+      .buttons div img {
+        height: 5rem;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .buttons div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 10px;
+    }
+
+    .buttons div img {
+      height: 6rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header"></header>
+  <div style="width: 80%; margin: auto;">
+    <section id="wrapper">
+      <section id="left-section">
+        <img src="https://t4.ftcdn.net/jpg/02/73/46/99/360_F_273469972_ESU9Rq3eIpSrK3xddlIEyDh7vrslbiGg.jpg" />
+      </section>
+      <section id="right-section">
+        <section class="para1">
+          <h1>
+            SHAHID ADONI
+          </h1>
+          <h2>
+            Full Stack Developer <span style="color: #4ac3bf;"> & </span>Tech Enthusiast
+          </h2>
+        </section>
+        <section class="para2">
+          <p>
+            Basically, a Mechanical Engineer turned Software Developer and working towards making my passion as my
+            profession
+          </p>
+          <p>
+            AI and Data Enthusiast
+          </p>
+          <b>
+            I like travelling new places and meeting new people.
+          </b>
+        </section>
+        <section class="buttons">
+          <div>
+            <img src="http://www.engineerchirag.in/img/profile.d8137438.png" />
+            <p>Profile</p>
+          </div>
+          <div>
+            <img src="http://www.engineerchirag.in/img/resume.e0000ed4.png" />
+            <p>Resume</p>
+          </div>
+          <div>
+            <img src="http://www.engineerchirag.in/img/portfolio.9155d173.png" />
+            <p>Work</p>
+          </div>
+          <div>
+            <img src="http://www.engineerchirag.in/img/contact.81935d23.png" />
+            <p>Contact</p>
+          </div>
+
+        </section>
+        <section class="width-100" style="height: 100px; text-align: center;">
+          <button style="
+                width: 180px;
+                height: 30px;
+                background-color: #337ab7;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                margin-bottom: 50px;
+              ">
+            Download Resume
+          </button>
+        </section>
+      </section>
+    </section>
+  </div>
+</body>
+
+</html>

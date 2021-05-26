@@ -232,20 +232,18 @@ footer.second p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateX(-90%);
+    /* transform: translateX(-90%); */
+    left: 0;
     min-width: 100vw;
-    height: 90vh;
+    height: 100vh;
     background-color: #6991AC;
   } 
   .nav-ul li{
     line-height: 7rem;
   }
    /* Move inside list elements, display them on hover */
-  #menu-icon:hover .nav-ul{
+  #menu-icon:hover + .nav-ul{
     visibility:visible;
-  }
-  #menu-icon:hover{
-    background-color: blueviolet;
   }
   /* one third section = occupy 100% width */
   .one-third{

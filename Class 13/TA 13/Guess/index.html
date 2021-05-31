@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            background-color: cyan
+        }
+
+        #wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 50%;
+            /* background-color: black; */
+        }
+
+        h1 {
+            font-size: 50px;
+            padding: 1rem;
+            color: rgb(255, 145, 0);
+        }
+
+        #guess {
+            width: 70%;
+            min-height: 35px;
+            border: 1px solid rgb(160, 160, 160);
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        #element {
+            font-size: 20px;
+            /* margin: 0.5rem; */
+            color: rgb(0, 0, 0);
+        }
+
+        #buttons div {
+            display: flex;
+            width: 25%;
+        }
+
+        button {
+            height: 30px;
+            width: 100px;
+            margin: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 2px 2px 10px 2px rgb(0 0 0 / 30%);
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #lucky {
+            border: 2px solid rgb(255, 145, 0);
+            background-color: rgb(241, 205, 157);
+        }
+
+        #restart {
+            border: 2px solid rgb(70, 69, 68);
+            background-color: rgb(221, 217, 212);
+        }
+
+        .list-group {
+            min-width: 220px;
+            line-height: 2rem;
+            font-size: medium;
+            font-weight: 505;
+            box-shadow: 0px 4px 16px 0 rgb(0 0 0 / 20%);
+            border-radius: 2px;
+            list-style: none;
+            text-align: center;
+        }
+
+        .list-group li {
+            line-height: 2rem;
+            border: 1px solid;
+            margin: 5px 0px;
+            background-color: rgb(196, 194, 194);
+
+        }
+        .fail,.success{
+            border: 1px solid black;
+            box-shadow: 0px 4px 16px 0 rgb(0 0 0 / 20%);
+            border-radius: 2px;
+            padding: 5px;
+        }
+        .fail{
+            background-color: rgba(248, 24, 24, 0.9);
+        }
+        .success{
+            background-color: rgba(0, 255, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="container">
+            <h1>guess.the.number()</h1>
+            <input id="guess" type="number" placeholder="1 to 100 Whats Your Guess??">
+            <div id="element">
+
+            </div>
+            <div id="buttons">
+                <button id="lucky">
+                    Get Lucky
+                </button>
+                <button id="restart">
+                    Restart
+                </button>
+            </div>
+            <div id="noOfguess">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        //guess array
+        let guesses;
+        //random number generated
+        let random;
+        //on page reload
+        window.onload = function () {
+            restartgame()
+            document.getElementById("lucky").addEventListener("click", startgame);
+            document.getElementById("restart").addEventListener("click", restartgame)
+        }
+        //random number generation
+        function getRandomNumber() {
+            return Math.floor((Math.random() * 100) + 1);
+        }
+        //restart button
+        function restartgame() {
+            random = getRandomNumber();
+            guesses = []
+            displayGuess()
+            resetResultContent()
+        }
+        //reset result
+        function resetResultContent() {
+            document.getElementById("element").innerHTML = "";
+        }
+        //lucky button
+        function startgame() {
+            let myGuess = document.getElementById("guess").value;
+            saveGuessHistory(myGuess)
+            displayGuess()
+            displayResult(myGuess)
+        }
+        //saveing history to show by pushing in guess array
+        function saveGuessHistory(myguess) {
+            guesses.push(myguess);
+        }
+
+        function displayResult(myguess) {
+            if (myguess > random) {
+                guessLower()
+            } else if (myguess < random) {
+                guessHigher()
+            } else {
+                Jackpot()
+            }
+        }
+        function Jackpot() {
+            const text = "Jackpot! You wasted your time :D"
+            let dialog = getDialog('won', text)
+            document.getElementById("element").innerHTML = dialog;
+        }
+
+        function guessLower() {
+            const text = "Your guess is too high!"
+            let dialog = getDialog('warning', text)
+            document.getElementById("element").innerHTML = dialog;
+        }
+
+        function guessHigher() {
+            const text = "Your guess is too low!"
+            let dialog = getDialog('warning', text)
+            document.getElementById("element").innerHTML = dialog;
+        }
+        function getDialog(dialogType, text) {
+            let dialog;
+            switch (dialogType) {
+                case "warning":
+                    dialog = "<div class='fail' role='alert'>"
+                    break;
+                case "won":
+                    dialog = "<div class='success' role='alert'>"
+                    break;
+            }
+            dialog += text;
+            dialog += "</div>"
+            return dialog;
+        }
+
+        function displayGuess() {
+            let index = guesses.length - 1;
+            let list = "<ul class='list-group'>"
+            while (index >= 0) {
+                list +=
+                    "<li class='list-group-item'>" +
+                    "You guessed " + guesses[index] +
+                    "</li>";
+                index -= 1
+            }
+            list += '</ul>'
+            document.getElementById("noOfguess").innerHTML = list;
+        }
+
+    </script>
+</body>
+
+</html>
